@@ -24,13 +24,13 @@ fun main() {
         Utils.CustomerType.INDIVIDUAL,
         Instant.now()
     )
-    usedCustomerIDs.add(customer1.getCustomerUUID().toString())
+    usedCustomerIDs.add(customer1.customerUUID.toString())
     println("customer1 before setting account number: $customer1")
 
     customer1.setAccountNumber("BankOfGreece")
     println("customer1 after setting account number: $customer1")
     //customer1.setAccountNumber("b") throws exception since account number has already been set
-    println("\n${customer1.getFirstName()}")
+    println("\n${customer1.firstName}")
 
     println(usedCustomerIDs)
     val randomUUID = UUID.randomUUID()
@@ -49,6 +49,7 @@ fun main() {
     println("credit card number = ${creditCard1.getCreditCardNumber()}")
 
     println(creditCard1.customer)
+
 }
 
 fun createBanks(): List<Bank> {

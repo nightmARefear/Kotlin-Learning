@@ -21,7 +21,7 @@ class CreditCard (
     }
 
     private fun buildCreditCardNumber(): String {
-        return bank.getVendorID() + getCustomerTypeID(customer.getCustomerType()).substring(2, 4) + Utils().generateRandomCharacters("0123456789", 9)
+        return bank.getVendorID() + getCustomerTypeID(customer.type).substring(2, 4) + Utils().generateRandomCharacters("0123456789", 9)
     }
 
     // getters
