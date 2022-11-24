@@ -1,0 +1,22 @@
+
+SAMPLE CustomerID: 10013 20010 ft74 5edy 123456789011
+
+- vendorName (5): each bank has a unique vendorID (e.g. BankOfGreece has 10010)
+
+- customerContinent (5): each continent has a unique continentID (e.g. Europe has 20010, N.America has 20012, ...)
+
+- customerType (4): each customerType has a unique customerTypeID (e.g. Individual has ft74, Business has wk48)
+
+- random 4 characters (e.g. "n9bb")
+
+- shortenedCustomerID (12): each BankingApp.Customer has a unique shortenedCustomerID; it derives from the last section of the customerUUID()
+
+--------------------------
+BankingApp.CreditCard:
+
+SAMPLE credit card number: 10013 74 22 123456789011
+
+ - vendorID (5): each bank has a unique vendorID
+ - customerType (2): the last two digits of the customerType field of the BankingApp.Customer class
+ - random 9 numbers (9): nine randomly generated numbers
+ - 
