@@ -4,6 +4,7 @@ import jdk.nashorn.internal.objects.Global
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.math.BigInteger
 import kotlin.concurrent.thread
 
@@ -186,12 +187,29 @@ fun main() {
         println("end of coroutine in thread ${Thread.currentThread().name}")
     }
 
+    waitForThreadsToFinish(3000)
      */
 
     // program 7
 
+    println("\n${Thread.currentThread().name} starts")
+    printMainSeparators()
 
-    waitForThreadsToFinish(3000)
+    var sum = 0
+
+    GlobalScope.launch {
+        for (i in 1..100) sum += i
+    }
+
+    // creates a new coroutine and blocks the current thread
+    // until work is done (in our case, the delay() method is called)
+    runBlocking {
+        delay(100L)
+    }
+    println("\n${Thread.currentThread().name}: sum = $sum\n")
+
+    printMainSeparators()
+    println("${Thread.currentThread().name} ends")
 }
 
 private fun printCoroutinesSeparators() {
