@@ -7,7 +7,7 @@ class Utils {
     }
 
     fun endProgramMessage(threadName: String) {
-        println("\n----------------------------------------" +
+        println("\n\n----------------------------------------" +
                 "\n$threadName: main program ends")
     }
 }
